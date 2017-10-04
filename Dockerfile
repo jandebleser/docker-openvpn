@@ -1,7 +1,11 @@
 # Original credit: https://github.com/jpetazzo/dockvpn
 
 # Smallest base image
-FROM alpine:latest
+ARG FROMIMAGE=alpine:latest
+
+FROM $FROMIMAGE
+ARG FROMIMAGE
+RUN echo $FROMIMAGE > image_version
 
 MAINTAINER Kyle Manna <kyle@kylemanna.com>
 
